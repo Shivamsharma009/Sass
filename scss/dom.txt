@@ -1,0 +1,5 @@
+<p class="par"> This is Paragraph </p>
+
+p -> Paragraph node
+class=par --> attribute node
+This is Paragraph -> text node

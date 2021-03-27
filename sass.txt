@@ -1,0 +1,109 @@
+                       What is sass 
+                    ----------------------
+
+sass -: it uses the file extensions scss and thi stands for sassy css
+it is basically a superset of css.
+//Attribute is used to uniquely thie node.
+           Two types of sass follow
+        ----------------------------------
+
+        (scss syntax) (it is basically used in practice)
+
+        @mixin button-base(){
+            @include typegraphy(button);
+            display : inline-flex;
+            position: relative;
+            height: $button-height;
+            border: none;
+            vertical-algin: middle;
+
+            &hover{cursor: pointer}
+        }
+
+        (Indented Syntax)
+
+        @mixin button-base()
+          @include typegraphy(button)
+
+        display: inline-flex;
+        position: relative;
+        height: $button-height;
+        border: none;
+        vertical-align: middle
+
+        &hover
+            cursor: pointer
+
+
+
+          (Setting the sass in dist(css file))
+        -----------------------------------------
+        "liveSassCompile.Setting.formats":[
+          "format": "expanded",
+          "extensionsName" : ".css",
+          "SavePath" : "/dist/css"
+        ]
+
+
+                    Variable in scss
+                  -----------------------
+      So the first sass features that we going to look at it variables
+
+      * css have variable and css have variable but sass has had variable 
+        long before css currently . css variable compability across browser 90%.
+
+      * But when you use sass variable they don't compile into css variable
+        they compile to the css variable.
+
+  After the code compile in main.scss to main.css you see in main.css file we don't have 
+  any variable defined in main.css. sass puts the actually value using saas variable has 
+  100% compatibilty browsers.
+
+
+                maps in saas
+            -------------------------
+ maps is just like javascript 
+it is key - value pair
+
+//Nesting in javascript
+-----------------------------
+Nesting might be done one of the best features 
+of saas but depending upon how big our project is 
+dont do too much nesting using classes can be reused 
+instead of nest after nest.
+
+         Partials Seperating files(Global sass)
+        -------------------------------------------
+  suppose you are working on a large project it is the great way to modularize your css
+  and make things easier to maintain a partial simply a sass file named with leading underscore.
+  so let sass know the file is only a partial and that should not generate a css file that begin with a underscore
+
+  By using partials we can seperate major components into partials .it is helpful when you are wotking on a large projects
+  we can break the components and work them individually
+
+
+            function is sass
+          -------------------------
+
+    function in sass for modularity.
+
+
+
+    let says we have some of the flex box we need to create . so we will go up here
+    and we are going to create a mixin
+     
+     mixin can also be used to set direction
+     mixin can also be used for media queries
+    ----------------------------------------------
+    content : this content is pass when mixin is called.
+
+
+    //Extend -- (Inheritance in saas)
+  ------------------------------------------
+  we can extend the element and so the element that we extend it would then inherit 
+  all the styles the selected element.
+
+
+
+
+           

@@ -1,0 +1,75 @@
+//Traditional way
+/*
+:root {
+    --primary-color: #272727;
+    --ancent-color: #ff65ff;
+    --text-color: #fff;
+
+}
+*/
+
+/*
+    Topics in saas 
+-----------------------------
+     variables in sass 
+     maps
+     nesting
+     partials
+     function
+     mixin(very very important)
+     responsive mixin
+     extend inheritance
+
+*/
+@import "./variables";
+@import "./resets";
+
+body {
+  background: $ancient-color;
+  color: white;
+}
+
+@function weight($weight-name) {
+  @return map-get($font-weights, bold);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+//Responsive of a screen
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+//column - 1 column 2 row
+//row -> 1 row 2 column
+.main {
+  @include flexCenter(row);
+  width: 80%;
+  margin: 0 auto;
+  #{&}__paragraph1 {
+    font-weight: weight(bold);
+    &:hover {
+      color: pink;
+    }
+  }
+  #{&}__paragraph2 {
+    @extend .main__paragraph1;
+    &:hover {
+      color: aqua;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+h1 {
+  color: rgb(0, 255, 191);
+}
